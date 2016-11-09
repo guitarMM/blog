@@ -1,0 +1,26 @@
+<div class="title">
+  <strong>Title</strong>
+  <%= @post.title %>
+</div>
+<div class="body">
+  <strong>Text</strong>
+  <%= @post.body %>
+</div>
+
+<div class="comments">
+  <h1>Comments</h1>
+<% @post.comments.each do |comment| %>
+<%= comment.title %>
+<%= render @post.comments %>
+<% end %>
+</div>
+
+<%= form_for ([@post, @post.comment.build]) do |f| %>
+<div class="field">
+  <%= f.label :title, "Add a comment" %><br>
+  <%= f.text_field :title %>
+</div>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>

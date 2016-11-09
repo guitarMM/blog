@@ -2,6 +2,13 @@
 
 <ul>
   <% @posts.each do |post| %>
-  <li><% post.title %></li>
+  <li>
+    <div class="title"><%= link_to post.title, post_path(post.id) %></div>
+    <div class="body"><%= post.body %></div>
+    <%= link_to "[Edit]", edit_post_path(post.id) %>
+    <%= link_to "[Delete]", post_path(post.id), method: :delete, data:{ confirm:"sre you sure?" } %>
+  </li>
   <% end %>
 </ul>
+
+<p><%= link_to "Add new", new_post_path %></p>
