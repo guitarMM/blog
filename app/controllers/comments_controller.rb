@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  def post:references
-  end
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
