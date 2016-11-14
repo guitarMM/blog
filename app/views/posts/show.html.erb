@@ -13,24 +13,17 @@
   <div class="comments">
     <h1>Comments</h1>
     <% @post.comments.each do |comment| %>
-    <li>
-      <%= comment.title %>
-      <%= render @post.comments %>
-    </li>
+    <li><%= comment.title %></li>
     <% end %>
   </div>
 
   <div class="new_comment">
-  <ul>
     <li>
       <%= form_for [@post, @post.comments.build] do |f| %>
-      <%= f.label :title %>
       <%= f.text_field :title %>
-      <% if @post.comments.errors.any? %>
-      <%= @project.comments.errors.messages[:title][0] %>
-      <% end %>
       <%= f.submit %>
       <% end %>
     </li>
   </div>
+
 </ul>
