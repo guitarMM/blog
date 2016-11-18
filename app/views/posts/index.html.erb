@@ -3,9 +3,16 @@
 <ul>
   <% @posts.each do |post| %>
   <li>
-    <div class="title"><%= link_to post.title, post_path(post.id) %></div>
-    <div class="body"><%= post.body %></div>
+    <div class="title">
+      <strong>Title</strong><br>
+      <%= link_to post.title, post_path(post.id) %>
+    </div>
+    <div class="body">
+      <strong>Body</strong><br>
+      <%= post.body %>
+    </div>
     <div class="comment">
+      <strong>Comment</strong><br>
       <% post.comments.each do |comment| %>
       <%= comment.title %>
       <% end %>
