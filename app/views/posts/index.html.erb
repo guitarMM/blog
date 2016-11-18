@@ -5,6 +5,11 @@
   <li>
     <div class="title"><%= link_to post.title, post_path(post.id) %></div>
     <div class="body"><%= post.body %></div>
+    <div class="comment">
+      <% post.comments.each do |comment| %>
+      <%= comment.title %>
+      <% end %>
+    </div>
     <%= link_to "[Edit]", edit_post_path(post.id) %>
     <%= link_to "[Delete]", post_path(post.id), method: :delete, data:{ confirm:"sre you sure?" } %>
   </li>
