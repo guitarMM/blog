@@ -1,21 +1,22 @@
+
 <h1>Post</h1>
 
 <ul>
   <% @posts.each do |post| %>
-  <li>
-    <div class="title">
-      <strong>Title</strong><br>
+  <li class="post">
+    <div class="post-title">
       <%= link_to post.title, post_path(post.id) %>
     </div>
-    <div class="body">
-      <strong>Body</strong><br>
-      <%= post.body %>
+    <div class="post-body">
+      <%= simple_format(post.body) %>
     </div>
-    <div class="comment">
+    <div class="post-comment">
       <strong>Comment</strong><br>
-      <% post.comments.each do |comment| %>
-      <%= comment.title %>
-      <% end %>
+      <ul>
+          <% post.comments.each do |comment| %>
+            <li><%= comment.title %></li>
+          <% end %>
+      </ul>
     </div>
     <%= link_to "[Edit]", edit_post_path(post.id) %>
     <%= link_to "[Delete]", post_path(post.id), method: :delete, data:{ confirm:"sre you sure?" } %>
