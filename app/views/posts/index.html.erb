@@ -1,6 +1,7 @@
 
-<%= page_entries_info @posts %>
+
 <ul>
+  <%= page_entries_info @posts %>
   <% @posts.each do |post| %>
   <li class="post">
     <div class="post-title">
@@ -17,11 +18,11 @@
           <% end %>
       </ul>
     </div>
-    <%= link_to "[編集]", edit_post_path(post.id) %>
-    <%= link_to "[削除]", post_path(post.id), method: :delete, data:{ confirm:"sre you sure?" } %>
+    <%= link_to "[Edit]", edit_post_path(post.id) %>
+    <%= link_to "[Delete]", post_path(post.id), method: :delete, data:{ confirm:"sre you sure?" } %>
   </li>
   <% end %>
+  <%= paginate @posts %>
 </ul>
 
 <p><%= link_to "Add new", new_post_path %></p>
-<%= paginate @posts %>
