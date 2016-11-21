@@ -21,7 +21,14 @@ html{
 }
 
 .post{
+  border: 1px solid #191970;
+  width: 1300px;
+  text-align: center;
   margin-bottom: 20px;
+}
+
+.post div{
+  width: 70%;
 }
 
 .post-title{
