@@ -20,7 +20,6 @@ html{
   font-size: 13px;
 }
 
-
 .post{
   margin-bottom: 20px;
 }
@@ -28,4 +27,21 @@ html{
 .post-title{
   font-size: 16px;
   font-weight: bold;
+}
+
+.header {
+  height: 65px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.header-left {
+  float: left;
+  padding: 10px 60px;
+  color: #ED7000;
+  font-size: 30px;
+}
+
+.header-right {
+  float: right;
+  color: #808080;
 }
