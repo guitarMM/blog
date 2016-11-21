@@ -45,3 +45,13 @@ html{
   float: right;
   color: #808080;
 }
+
+.header-right li {
+  float: left;
+  padding: 20px 30px;
+  border-left: 1px solid #dddddd;
+}
+
+.login {
+  color: #ED7000;
+}

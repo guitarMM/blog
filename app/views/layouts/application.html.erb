@@ -17,15 +17,11 @@
       <div class="header-right">
         <% if user_signed_in? %>
           Logged in as <strong><%= current_user.email %></strong>.
-          <li class="login">
-            <%= link_to '登録内容編集', edit_user_registration_path, :class => 'navbar-link' %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-          </li>
+          <li class="login"><%= link_to '登録内容編集', edit_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
         <% else %>
-          <li class="login">
-            <%= link_to "会員登録", new_user_registration_path, :class => 'navbar-link'  %>
-            <%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %>
-          </li>
+          <li class="login"><%= link_to "会員登録", new_user_registration_path, :class => 'navbar-link'  %></li>
+          <li><%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %></li>
         <% end %>
       </div>
     </ul>
