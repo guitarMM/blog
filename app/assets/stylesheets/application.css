@@ -25,15 +25,18 @@ html{
 }
 
 .post{
-  border: 1px solid #191970;
-  text-align: center;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px #eeeeee;
   margin-bottom: 20px;
   margin-left: 30%;
   margin-right: 30%;
 }
 
 .post div{
-  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .post-title{
@@ -69,8 +72,14 @@ html{
 
 .header-right li {
   float: left;
-  padding: 20px 30px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   border-left: 1px solid #dddddd;
+  border-radius: 32px;
+  border: solid 1px #86B404;
 }
 
 .login {
