@@ -18,10 +18,13 @@
           <% end %>
       </ul>
     </div>
-      <div class="post-edidel">
-        <%= link_to "[Edit]", edit_post_path(post.id) %>
-        <%= link_to "[Delete]", post_path(post.id), method: :delete, data:{ confirm:"sre you sure?" } %>
-      </div>
+    <div class="post-newcomment">
+      
+    </div>
+    <div class="post-edidel">
+      <%= link_to "[Edit]", edit_post_path(post.id) %>
+      <%= link_to "[Delete]", post_path(post.id), method: :delete, data:{ confirm:"sre you sure?" } %>
+    </div>
   </li>
   <% end %>
   <%= paginate @posts %>
