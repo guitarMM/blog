@@ -106,7 +106,7 @@ html{
 }
 
 .index_bottom-newpost{
-  
+
 }
 
 
@@ -149,4 +149,27 @@ html{
 .show-newcomment{
   padding-top: 5px;
   background-color: #f5f5f5;
+}
+
+
+.registration-newuser{
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px #eeeeee;
+  max-width: 250px;
+  margin-left: 35%;
+  margin-top: 100px;
+}
+
+.registration-newuser div{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.registration-newuser h2{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-left: 20px; 
 }
