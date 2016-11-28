@@ -11,12 +11,20 @@
 <ul>
 
   <div class="comments">
-    <strong>Comments</strong>
-    <% @post.comments.each do |comment| %>
-    <li><%= comment.title %></li>
+    <strong>Comment</strong><br>
+    <% for comment in @post.comments.each %>
+      <li><%= comment.title %></li>
     <% end %>
   </div>
 
-  <%= render 'commentform' %>
+  <div class="new_comment">
+    <li>
+      <%= form_for [@post, @post.comments.build] do |f| %>
+      <%= f.text_field :title %>
+      <%= f.submit %>
+      <% end %>
+    </li>
+  </div>
+
 
 </ul>

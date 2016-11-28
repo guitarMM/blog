@@ -11,7 +11,6 @@
       <%= simple_format(post.body) %>
     </div>
     <div class="post-comment">
-      <strong>Comment</strong><br>
       <ul>
           <% post.comments.each do |comment| %>
             <li><%= comment.title %></li>
@@ -19,7 +18,13 @@
       </ul>
     </div>
     <div class="post-newcomment">
-      
+      <li>
+        <%= form_for( [post, post.comments.build] ) do |f| %>
+        <%= f.label :title, "コメント" %><br />
+        <%= f.text_field :title %>
+        <%= f.submit %>
+        <% end %>
+      </li>
     </div>
     <div class="post-edidel">
       <%= link_to "[Edit]", edit_post_path(post.id) %>
