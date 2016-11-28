@@ -7,6 +7,7 @@
     <div class="post-title">
       <%= link_to post.title, post_path(post.id) %>
     </div>
+    <hr>
     <div class="post-body">
       <%= simple_format(post.body) %>
     </div>
@@ -18,17 +19,15 @@
       </ul>
     </div>
     <div class="post-newcomment">
-      <li>
-        <%= form_for( [post, post.comments.build] ) do |f| %>
-        <%= f.label :title, "コメント" %><br />
-        <%= f.text_field :title %>
-        <%= f.submit %>
-        <% end %>
-      </li>
+      <%= form_for( [post, post.comments.build] ) do |f| %>
+      <%= f.label :title, "コメント" %><br />
+      <%= f.text_field :title %>
+      <%= f.submit %>
+      <% end %>
     </div>
     <div class="post-edidel">
       <%= link_to "[Edit]", edit_post_path(post.id) %>
-      <%= link_to "[Delete]", post_path(post.id), method: :delete, data:{ confirm:"sre you sure?" } %>
+      <%= link_to "[Delete]", post_path(post.id), method: :delete, data:{ confirm:"are you sure?" } %>
     </div>
   </li>
   <% end %>
