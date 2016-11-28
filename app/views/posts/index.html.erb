@@ -1,4 +1,9 @@
 
+<div class="login-success">
+  <% if user_signed_in? %>
+    <strong><%= current_user.email %></strong>としてログインしました。
+  <% end %>
+</div>
 
 <ul>
   <%= page_entries_info @posts %>
