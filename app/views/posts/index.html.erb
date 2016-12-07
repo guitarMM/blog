@@ -1,7 +1,7 @@
 
 <div class="login-success">
   <% if user_signed_in? %>
-    <strong><%= current_user.email %></strong>としてログインしました。
+    <strong><%= current_user.name %></strong>としてログインしました。
   <% end %>
 </div>
 
@@ -9,6 +9,9 @@
   <%= page_entries_info @posts %>
   <% @posts.each do |post| %>
   <li class="post">
+    <div class="post-user">
+      <%= user_session.name %>
+    </div>
     <div class="post-title">
       <%= link_to post.title, post_path(post.id) %>
     </div>
