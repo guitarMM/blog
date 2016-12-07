@@ -16,7 +16,13 @@
     <ul>
       <div class="header-right">
         <% if user_signed_in? %>
+
           <li class="in_login">
+            <div class="login-add">
+              <%= link_to "新規投稿", new_post_path %>
+            </div>
+          </li>
+          <li>
             <%= link_to '登録内容編集', edit_user_registration_path, :class => 'navbar-link' %>
           </li>
           <li>
