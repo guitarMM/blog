@@ -10,7 +10,7 @@
   <% @posts.each do |post| %>
   <li class="post">
     <div class="post-user">
-      <%= user_session.name %>
+      <%= post.user.name %>
     </div>
     <div class="post-title">
       <%= link_to post.title, post_path(post.id) %>
