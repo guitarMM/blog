@@ -33,10 +33,12 @@
       <%= f.submit %>
       <% end %>
     </div>
-    <div class="post-edidel">
-      <%= link_to "[Edit]", edit_post_path(post.id) %>
-      <%= link_to "[Delete]", post_path(post.id), method: :delete, data:{ confirm:"are you sure?" } %>
-    </div>
+    <% if post.user == current_user %>
+      <div class="post-edidel">
+        <%= link_to "[編集]", edit_post_path(post.id) %>
+        <%= link_to "[削除]", post_path(post.id), method: :delete, data:{ confirm:"are you sure?" } %>
+      </div>
+    <% end %>
   </li>
   <% end %>
   <%= paginate @posts %>
