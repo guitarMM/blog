@@ -17,6 +17,7 @@
       <li>
         <%= form_for [@post, @post.comments.build] do |f| %>
         <%= f.text_field :title %>
+        <%= f.hidden_field :post_id %>
         <%= f.submit %>
         <% end %>
       </li>

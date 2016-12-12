@@ -6,7 +6,6 @@
 </div>
 
 <ul>
-  <%= page_entries_info @posts %>
   <% @posts.each do |post| %>
   <li class="post">
     <div class="post-user">
@@ -31,6 +30,7 @@
       <%= form_for( [post, post.comments.build] ) do |f| %>
       <%= f.label :title, "コメント" %><br />
       <%= f.text_field :title %>
+      <%= f.hidden_field :post_id %>
       <%= f.submit %>
       <% end %>
     </div>
