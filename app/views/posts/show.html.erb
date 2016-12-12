@@ -23,4 +23,10 @@
       </li>
     </div>
   </ul>
+  <div class="show-edidel">
+    <% if @post.user == current_user %>
+      <%= link_to "[編集]", edit_post_path(@post.id) %>
+      <%= link_to "[削除]", post_path(@post.id), method: :delete, data:{ confirm:"are you sure?" } %>
+    <% end %>
+  </div>
 </div>

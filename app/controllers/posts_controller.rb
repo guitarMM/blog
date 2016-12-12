@@ -56,28 +56,21 @@ class PostsController < ApplicationController
   def update
     @user = current_user
     @post = Post.find(params[:id])
-    check = 'PARAM_OK'
     if @post.user_id == @user.id
-      check = 'PARAM_OK'
-    else
-      check = 'PARAM_NG'
-    end
-    case check
-      when 'PARAM_OK'
-        respond_to do |format|
-          if @post.update(post_params)
-            format.html { redirect_to post_path(post.id), notice: 'Note was successfully updated.' }
-            format.json { head :no_content }
-          else
-            format.html { render action: "edit" }
-            format.json { render json: @post.errors, status: :unprocessable_entity }
-          end
-        end
-      when 'PARAM_NG'
-        respond_to do |format|
-          format.html { redirect_to notes_url , notice: 'You can not edit this item' }
+      respond_to do |format|
+        if @post.update(post_params)
+          format.html { redirect_to post_path(post.id), notice: 'Note was successfully updated.' }
           format.json { head :no_content }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
         end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to post_path(post.id) , notice: 'You can not edit this item' }
+        format.json { head :no_content }
+      end
     end
   end
 
