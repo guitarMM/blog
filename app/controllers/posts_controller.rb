@@ -50,6 +50,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     @user = current_user
+    @post.user_id = @user.id
   end
 
   def update
@@ -64,8 +65,8 @@ class PostsController < ApplicationController
     case check
       when 'PARAM_OK'
         respond_to do |format|
-          if @post.update_attributes(params[:note])
-            format.html { redirect_to @post, notice: 'Note was successfully updated.' }
+          if @post.update(post_params)
+            format.html { redirect_to post_path(post.id), notice: 'Note was successfully updated.' }
             format.json { head :no_content }
           else
             format.html { render action: "edit" }
@@ -93,7 +94,7 @@ class PostsController < ApplicationController
       when 'PARAM_OK'
         respond_to do |format|
             @post.destroy
-            format.html { redirect_to post_path }
+            format.html { redirect_to root_path }
             format.json { head :no_content }
         end
       when 'PARAM_NG'

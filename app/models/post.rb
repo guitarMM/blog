@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   has_many :comments
 
   scope :latest, -> { order("update_at DESC") }
-
+  before_update ->{ logger.info 'before_update' }
   validates :title, presence: true, length: { minimum: 5 }
   validates :body, presence: true
 end
