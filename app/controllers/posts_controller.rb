@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @user = current_user
+    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
     @post = Post.where("user_id=?",@user.id).latest
     respond_to do |format|
       format.html

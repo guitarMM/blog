@@ -6,6 +6,7 @@
 </div>
 
 <ul>
+  <%= paginate @posts %>
   <% @posts.each do |post| %>
   <li class="post">
     <div class="post-user">
@@ -42,7 +43,6 @@
     <% end %>
   </li>
   <% end %>
-  <%= paginate @posts %>
 </ul>
 
 <p class="index-newpost"><%= link_to "Add new", new_post_path %></p>
