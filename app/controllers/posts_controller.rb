@@ -58,8 +58,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.user_id == @user.id
       respond_to do |format|
-        if @post.update(post_params)
-          format.html { redirect_to post_path(post.id), notice: 'Note was successfully updated.' }
+        if @post.update (post_params)
+          format.html { redirect_to post_path(@post.id), notice: 'Note was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: "edit" }
@@ -68,7 +68,7 @@ class PostsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { redirect_to post_path(post.id) , notice: 'You can not edit this item' }
+        format.html { redirect_to post_path(@post.id) , notice: 'You can not edit this item' }
         format.json { head :no_content }
       end
     end
