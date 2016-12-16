@@ -22,8 +22,8 @@
     <div class="post-comment">
       <ul>
           <% post.comments.each do |comment| %>
-            <li><%= comment.user.name %></li>
-            <li><%= comment.title %></li>
+            <li class="post_comment-usename"><%= comment.user.name %></li>
+            <li class="post_comment-title"><%= comment.title %></li><br />
           <% end %>
       </ul>
     </div>

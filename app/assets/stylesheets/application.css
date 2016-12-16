@@ -68,6 +68,19 @@ html{
   margin-top: 20px;
 }
 
+.post-comment li {
+  float: left;
+  padding-left: 5px;
+}
+
+.post_comment-usename {
+  font-size: 7px;
+}
+
+.post_comment-title {
+  font-size: 10px;
+}
+
 .post div{
   padding-top: 10px;
   padding-bottom: 10px;
