@@ -27,14 +27,6 @@
           <% end %>
       </ul>
     </div>
-    <div class="post-newcomment">
-      <%= form_for( [post, post.comments.build] ) do |f| %>
-      <%= f.label :title, "コメント" %><br />
-      <%= f.text_field :title %>
-      <%= f.hidden_field :post_id %>
-      <%= f.submit %>
-      <% end %>
-    </div>
     <% if post.user == current_user %>
       <div class="post-edidel">
         <%= link_to "[編集]", edit_post_path(post.id) %>
