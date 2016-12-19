@@ -38,8 +38,10 @@ class PostsController < ApplicationController
         format.json { head :no_content }
       end
     else
-      format.html { render action: 'new' }
-      format.json { render json: @post.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
