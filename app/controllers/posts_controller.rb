@@ -24,7 +24,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @user = current_user
-    @post = Post.new
     respond_to do |format|
       format.html
       format.json { render json: @post }
@@ -32,17 +31,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.find(params[:id])
-    @user = current_user
-    @post.user_id = @user.id
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render action: '@post', status: :created, location: @post }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+    @post = Post.new (post_params)
+    if @post.save
+      respond_to do |format|
+        format.html { redirect_to root_path , notice: 'Post was successfully created.' }
+        format.json { head :no_content }
       end
+    else
+      format.html { render action: 'new' }
+      format.json { render json: @post.errors, status: :unprocessable_entity }
     end
   end
 
@@ -100,7 +97,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params[:post].permit(:title, :body)
+    params.require(:post).permit(:title, :body)
   end
 
   def set_post
