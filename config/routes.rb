@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   root 'posts#index'
   get  "comments/new"
   get  "posts/save"
+  get  "comments/save"
 
 end
