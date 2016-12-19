@@ -39,7 +39,7 @@ class PostsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { redirect_to root_path }
+        format.html { redirect_to root_path , notice: 'Post was not successfully created.' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
