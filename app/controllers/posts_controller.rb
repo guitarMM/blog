@@ -5,7 +5,6 @@ class PostsController < ApplicationController
     @posts = Post.all
     @user = current_user
     @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
-    @post = Post.where("user_id=?",@user.id).latest
     respond_to do |format|
       format.html
       format.json { render json: @posts }
@@ -33,7 +32,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.find(params[:id])
     @user = current_user
     @post.user_id = @user.id
     respond_to do |format|
