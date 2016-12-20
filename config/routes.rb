@@ -13,4 +13,12 @@ Rails.application.routes.draw do
   get  "posts/save"
   get  "comments/save"
 
+
+  Your::Application.routes.draw do
+  devise_for :users
+    if Rails.env.development?
+      mount LetterOpenerWeb::Engine, at: "/letter_opener"
+    end
+  end
+
 end
