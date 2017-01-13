@@ -9,12 +9,10 @@
   <%= paginate @posts %>
   <% @posts.each do |post| %>
   <li class="post">
-    <div class="post-user">
-      <%= post.user.name %>
-    </div>
     <div class="post-title">
       <%= link_to post.title, post_path(post.id) %>
     </div>
+    <a class="post_user"><%= post.user.name %></a>  <a class="post_time"><%= post.updated_at %></a>
     <hr>
     <div class="post-body">
       <%= simple_format(post.body) %>
