@@ -59,6 +59,35 @@ html{
   color: #ED7000;
 }
 
+.title{
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form{
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px #eeeeee;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.field{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.area{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.submit{
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
 
 .post{
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
