@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @user = current_user
-    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
+    @posts = Post.page(params[:page]).per(10)
     respond_to do |format|
       format.html
       format.json { render json: @posts }
