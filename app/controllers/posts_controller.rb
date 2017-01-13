@@ -4,7 +4,15 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @user = current_user
-    @posts = Post.page(params[:page]).per(10).order(created_at: :desc)
+
+    if params[:sort] == 'old'
+      @posts = Post.page(params[:page]).per(10).order(created_at: :asc)
+    elsif params[:sort] == 'new'
+      @posts = Post.page(params[:page]).per(10).order(created_at: :desc)
+    else
+      @posts = Post.page(params[:page]).per(10).order(created_at: :desc)
+    end
+
     respond_to do |format|
       format.html
       format.json { render json: @posts }
