@@ -5,9 +5,9 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
 
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :trackable, :validatable
-         
+
   #usernameを必須とする
   validates_uniqueness_of :name
   validates_presence_of :name
