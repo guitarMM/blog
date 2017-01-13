@@ -24,10 +24,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @user = current_user
-    respond_to do |format|
-      format.html
-      format.json { render json: @post }
-    end
   end
 
   def create
