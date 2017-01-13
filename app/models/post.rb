@@ -4,7 +4,6 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
 
-  default_scope -> { order(created_at: :desc) }
   before_update ->{ logger.info 'before_update' }
   validates :title, presence: true, length: { minimum: 1 }
   validates :body, presence: true
