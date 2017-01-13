@@ -10,6 +10,7 @@
     <div class="show-comment">
       <strong>Comment</strong><br>
       <% for comment in @post.comments.each %>
+        <li><%= comment.user.name %></li>
         <li><%= comment.title %></li>
       <% end %>
     </div>
