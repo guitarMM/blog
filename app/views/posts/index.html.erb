@@ -1,12 +1,17 @@
 
 <div class="login-success">
   <% if user_signed_in? %>
-    <strong><%= current_user.name %></strong>としてログインしました。
+    <strong><%= current_user.name %></strong>としてログインしています。
   <% end %>
 </div>
 
+<div class="sort">
+   <%= link_to "昇順", posts_path(sort: "old") %>
+   <%= link_to "降順", posts_path(sort: "new") %>
+</div>
+
+<a class="page"><%= paginate @posts %></a>
 <ul>
-  <%= paginate @posts %>
   <% @posts.each do |post| %>
   <li class="post">
     <div class="post-title">
@@ -34,5 +39,6 @@
   </li>
   <% end %>
 </ul>
+<a class="page"><%= paginate @posts %></a>
 
 <p class="index-newpost"></p>

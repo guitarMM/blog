@@ -59,6 +59,10 @@ html{
   color: #ED7000;
 }
 
+.sort{
+  text-align: right
+}
+
 .title{
   font-size: 20px;
   text-align: center;
