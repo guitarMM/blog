@@ -8,7 +8,7 @@
   </div>
   <ul>
     <div class="show-comment">
-      <strong>Comment</strong><br>
+      <strong>《Comment》</strong><br>
       <% for comment in @post.comments.each %>
       <li><%= comment.user.name %></li>
       <li><%= comment.title %></li>
@@ -20,7 +20,7 @@
         <%= form_for [@post, @post.comments.build] do |f| %>
         <%= f.text_field :title %>
         <%= f.hidden_field :post_id %>
-        <%= f.submit %>
+        <%= f.submit "コメントする" %>
         <% end %>
       </li>
       <% end %>
