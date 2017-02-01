@@ -1,15 +1,290 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+html {
+  font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+  font-size: 13px;
+}
+
+.body {
+  width: 100%;
+}
+
+.header {
+  height: 65px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.header-left {
+  float: left;
+  padding: 10px 60px;
+  color: #86B404;
+  font-size: 30px;
+}
+
+.header-right {
+  float: right;
+  color: #808080;
+}
+
+.header-right li {
+  float: left;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-left: 1px solid #dddddd;
+  border-radius: 32px;
+  border: solid 1px #86B404;
+}
+
+.login {
+  color: #ED7000;
+}
+
+.sort {
+  text-align: right
+}
+
+.title {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px #eeeeee;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.field {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.area {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.submit {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.post {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px #eeeeee;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.post div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.post hr {
+  width: 370px;
+  height: 0.5px;
+}
+
+.post-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 12px;
+  margin-left: 11px;
+}
+
+.post_user {
+  margin-left: 18px;
+  font-size: 12px;
+}
+
+.post_time {
+  font-size: 7px;
+}
+
+.post-body {
+  padding-top: 10px;
+}
+
+.post-comment {
+  font-size: 9px;
+  padding-top: 10px;
+  background-color: #f5f5f5;
+}
+
+.post-newcomment {
+  padding-top: 5px;
+  background-color: #f5f5f5;
+}
+
+.show {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px #eeeeee;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.show div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.show-title {
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.show hr {
+  width: 370px;
+  height: 0.5px;
+}
+
+.show-body {
+  padding-top: 10px;
+}
+
+.show-comment {
+  font-size: 9px;
+  padding-top: 10px;
+  background-color: #f5f5f5;
+}
+
+.show-newcomment {
+  padding-top: 5px;
+  background-color: #f5f5f5;
+}
+
+.registration-newuser {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px #eeeeee;
+  max-width: 250px;
+  margin-left: 35%;
+  margin-top: 100px;
+}
+
+.registration-newuser div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.registration-newuser h2 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.registration-newuser h3 {
+  padding-bottom: 10px;
+  padding-left: 100px;
+  padding-right: 15px;
+}
+
+.forget-password {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px #eeeeee;
+  max-width: 250px;
+  margin-left: 35%;
+  margin-top: 100px;
+}
+
+.forget-password div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.forget-password h2 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.forget-password h3 {
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 15px;
+}
+
+.session-login {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px #eeeeee;
+  max-width: 250px;
+  margin-left: 35%;
+  margin-top: 100px;
+}
+
+.session-login div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.session-login h2 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.session-login h3 {
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 15px;
+}
+
+.edit-user {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px #eeeeee;
+  max-width: 250px;
+  margin-left: 35%;
+  margin-top: 100px;
+}
+
+.edit-user div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.edit-userh2 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+}

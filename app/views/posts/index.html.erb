@@ -1,19 +1,44 @@
-<h1>Post</h1>
+<div class="login-success">
+  <% if user_signed_in? %>
+  <strong><%= current_user.name %></strong>としてログインしています。
+  <% end %>
+</div>
 
+<div class="sort">
+  <%= link_to "昇順", posts_path(sort: "old") %>
+  <%= link_to "降順", posts_path(sort: "new") %>
+</div>
+
+<a class="page"><%= paginate @posts %></a>
 <ul>
   <% @posts.each do |post| %>
-  <li>
-    <div class="title"><%= link_to post.title, post_path(post.id) %></div>
-    <div class="body"><%= post.body %></div>
-    <div class="comment">
-      <% post.comments.each do |comment| %>
-      <%= comment.title %>
-      <% end %>
+  <li class="post">
+    <div class="post-title">
+      <%= link_to post.title, post_path(post.id) %>
     </div>
-    <%= link_to "[Edit]", edit_post_path(post.id) %>
-    <%= link_to "[Delete]", post_path(post.id), method: :delete, data:{ confirm:"sre you sure?" } %>
+    <a class="post_user"><%= post.user.name %></a>
+    <a class="post_time"><%= I18n.l post.updated_at %></a>
+    <hr>
+    <div class="post-body">
+      <%= simple_format(post.body) %>
+    </div>
+    <div class="post-comment">
+      <ul>
+        <% post.comments.each do |comment| %>
+        <li><%= comment.user.name %></li>
+        <li><%= comment.title %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% if post.user == current_user %>
+    <div class="post-edidel">
+      <%= link_to "[編集]", edit_post_path(post.id) %>
+      <%= link_to "[削除]", post_path(post.id), method: :delete, data:{ confirm:"are you sure?" } %>
+    </div>
+    <% end %>
   </li>
   <% end %>
 </ul>
+<a class="page"><%= paginate @posts %></a>
 
-<p><%= link_to "Add new", new_post_path %></p>
+<p class="index-newpost"></p>

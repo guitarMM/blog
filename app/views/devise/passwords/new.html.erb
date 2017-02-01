@@ -1,0 +1,18 @@
+<div class="forget-password">
+    <h2>パスワードをお忘れですか？</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="forget_pass_mail-field">
+        <%= f.label :email, "メールアドレス" %><br/>
+        <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <div class="forget_pass-actions">
+        <%= f.submit "送信" %>
+    </div>
+    <% end %>
+    <br>
+    <h3><%= render "devise/shared/links" %></h3>
+</div>
