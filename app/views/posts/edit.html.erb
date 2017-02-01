@@ -1,22 +1,22 @@
 <div class="title">
-  <h1>編集</h1>
+    <h1>編集</h1>
 </div>
 
 <%= form_for @post do |f| %>
-  <div class="form">
+<div class="form">
     <div class="field">
-      <%= f.label :title, "タイトル" %><br>
-      <%= f.text_field :title %>
+        <%= f.label :title, "タイトル" %><br>
+        <%= f.text_field :title %>
     </div>
-  <div class="area">
-    <%= f.label :body, "本文" %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="submit">
-    <p>
-      <%= f.submit %>
-    </p>
-  </div>
+    <div class="area">
+        <%= f.label :body, "本文" %><br>
+        <%= f.text_area :body %>
+    </div>
+    <div class="submit">
+        <p>
+            <%= f.submit %>
+        </p>
+    </div>
 </div>
 
 <% end %>

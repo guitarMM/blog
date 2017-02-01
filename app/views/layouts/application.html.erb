@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Blog</title>
-  <%= csrf_meta_tags %>
+    <head>
+        <title>Blog</title>
+        <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
+    <body>
 
-<body>
+        <div class="header">
+            <div class="header-left">すごいまとめサイト</div>
+            <ul>
+                <div class="header-right">
+                    <% if user_signed_in? %>
 
-  <div class="header">
-    <div class="header-left">すごいまとめサイト</div>
-    <ul>
-      <div class="header-right">
-        <% if user_signed_in? %>
+                    <li class="in_login">
+                        <div class="login-add">
+                            <%= link_to "新規投稿", new_post_path(@post) %>
+                        </div>
+                    </li>
+                    <li>
+                        <%= link_to '登録内容編集', edit_user_registration_path, :class => 'navbar-link' %>
+                    </li>
+                    <li>
+                        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                    </li>
+                <% else %>
+                    <li class="out_login">
+                        <%= link_to "会員登録", new_user_registration_path, :class => 'navbar-link'  %>
+                    </li>
+                    <li>
+                        <%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %>
+                    </li>
+                    <% end %>
+                </div>
+            </ul>
+        </div>
 
-          <li class="in_login">
-            <div class="login-add">
-              <%= link_to "新規投稿", new_post_path(@post) %>
-            </div>
-          </li>
-          <li>
-            <%= link_to '登録内容編集', edit_user_registration_path, :class => 'navbar-link' %>
-          </li>
-          <li>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-          </li>
-        <% else %>
-          <li class="out_login">
-            <%= link_to "会員登録", new_user_registration_path, :class => 'navbar-link'  %>
-          </li>
-          <li>
-            <%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %>
-          </li>
+        <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
         <% end %>
-      </div>
-    </ul>
-  </div>
+        <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+        <% end %>
 
-  <% if notice %>
-  <p class="alert alert-notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-  <p class="alert alert-error"><%= alert %></p>
-  <% end %>
-
-  <%= yield %>
-  <%= link_to "Home", "/" %>
-</body>
+        <%= yield %>
+        <%= link_to "Home", "/" %>
+    </body>
 </html>

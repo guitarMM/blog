@@ -1,35 +1,36 @@
 <div class="registration-newuser">
-<h2>新規登録</h2>
+    <h2>新規登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  <div class="newuser_name-field">
-    <%= f.label :name, "名前" %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="newuser_name-field">
+        <%= f.label :name, "名前" %><br/>
+        <%= f.text_field :name, autofocus: true %>
+    </div>
 
-  <div class="newuser_mail-field">
-    <%= f.label :email, "登録メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+    <div class="newuser_mail-field">
+        <%= f.label :email, "登録メールアドレス" %><br/>
+        <%= f.email_field :email, autofocus: true %>
+    </div>
 
-  <div class="newuser_pass-field">
-    <%= f.label :password, "パスワード" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div class="newuser_pass-field">
+        <%= f.label :password, "パスワード" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %>
+            文字以上)</em>
+        <% end %><br/>
+        <%= f.password_field :password, autocomplete: "off" %>
+    </div>
 
-  <div class="newuser_pass-field">
-    <%= f.label :パスワードを再入力 %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="newuser_pass-field">
+        <%= f.label :パスワードを再入力 %><br/>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
 
-  <div class="newuser-actions">
-    <%= f.submit "新規登録" %>
-  </div>
-<% end %>
+    <div class="newuser-actions">
+        <%= f.submit "新規登録" %>
+    </div>
+    <% end %>
 
-<h3><%= render "devise/shared/links" %></h3>
+    <h3><%= render "devise/shared/links" %></h3>
 </div>
