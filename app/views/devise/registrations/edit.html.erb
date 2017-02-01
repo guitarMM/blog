@@ -1,8 +1,6 @@
 <div class="edit-user">
     <h2>登録内容編集</h2>
 
-    <!-- <%= resource_name.to_s.humanize %>　多分登録名-->
-
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
@@ -27,8 +25,7 @@
         <%= f.password_field :password, autocomplete: "off" %>
         <% if @minimum_password_length %>
         <br/>
-        <em><%= @minimum_password_length %>
-            字以上入力してください</em>
+        <em>*<%= @minimum_password_length %>字以上入力</em>
         <% end %>
     </div>
 
@@ -38,7 +35,7 @@
     </div>
 
     <div class="current_pass-field">
-        <%= f.label :password "現在のパスワード" %>
+        <%= f.label :password, "現在のパスワード" %>
         <i>(変更を保存するために現在のパスワードが必要になります)</i><br/>
         <%= f.password_field :current_password, autocomplete: "off" %>
     </div>
@@ -48,7 +45,8 @@
     </div>
     <% end %>
 
-    <p><%= button_to "退会してアカウント情報を削除", registration_path(resource_name), data: { confirm: "本当によろしいですか?" }, method: :delete %></p>
+    <div class="edit_leave">
+        <%= button_to "退会してアカウント情報を削除", registration_path(resource_name), data: { confirm: "本当によろしいですか?" }, method: :delete %>
+    </div>
 
-    <%= link_to "Back", :戻る %>
 </div>

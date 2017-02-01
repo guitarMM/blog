@@ -18,4 +18,3 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:name, :email, :password, :remember_me) }
     end
 end
-ßß
